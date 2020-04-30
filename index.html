@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <button id="relax" class="btn1">wanna relax?</button>
+    <div>
+      <!-- joke panel -->
+      <section id="joke-panel">
+        <ul>
+          <li><a href="#single-joke">Single Joke</a></li>
+          <li><a href="#multi-joke">Multiple Jokes</a></li>
+        </ul>
+        <div id="single-joke">
+          <p>We get a joke for you!</p>
+          <div class="joke-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde deserunt sint voluptates beatae quibusdam!</p>
+          </div>
+          <input type="button" class="joke-input" id="get-joke" value="get another joke">
+        </div>
+        <div id="multi-joke">
+          <form id="jokes-submit">
+            <select id="category" class="joke-input">
+              <option value="nerdy">nerdy</option>
+              <option value="explicit">explicit</option>
+            </select>
+            <input type="number" class="joke-input" id="joke-number">
+            <input type="button" class="joke-input" id="get-jokes" value="get">
+          </form>
+          <div class="joke-content"></div>
+        </div>
+      </section>
+      <!-- enter task information -->
+      <section id="enter-task">
+        <form id="task-form">
+          <input type="text" id="task-name" placeholder="enter the task name">
+          <input type="number" id="timing" placeholder="enter time you need in minutes">
+          <input type="number" id="reminder" placeholder="set a reminder in minutes">
+          <button id="add-task" class="btn1"> add task</button>
+        </form>
+      </section>
+      <!-- sorter & filter -->
+      <section id="sorter-filter">
+        <input type="text" id="filter" placeholder="task filter">
+        <select id="sort">
+          <option value="none">sort by status</option>
+          <option value="pending">pending</option>
+          <option value="in progress">in progress</option>
+          <option value="done">done</option>
+        </select>
+      </section>
+      <!-- task list -->
+      <ul id="sortable">
+        <li class="ui-state-default">
+          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+          <div class="content">
+            <p>english writing</p>
+            <div class="li-task">
+              <button>rename task</button>
+              <button>modify time</button>
+              <select>
+                <option value="none">status</option>
+                <option value="pending">pending</option>
+                <option value="in progress">in progress</option>
+                <option value="done">done</option>
+              </select>
+            </div>
+            <div class="li-time">
+              <span>8:00</span>
+              <button>start</button>
+              <button>delete</button>
+            </div>
+            <div class="li-remind">
+              <button>click to begin reminder</button>
+              <span>2:00</span>
+              <button>modify reminder</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="ui-state-default">
+          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+          <div class="content">
+            <p>math 120 final project</p>
+            <div class="li-task">
+              <button>rename task</button>
+              <button>modify time</button>
+              <select>
+                <option value="none">status</option>
+                <option value="pending">pending</option>
+                <option value="in progress">in progress</option>
+                <option value="done">done</option>
+              </select>
+            </div>
+            <div class="li-time">
+              <span>8:00</span>
+              <button>start</button>
+              <button>delete</button>
+            </div>
+            <div class="li-remind">
+              <button>click to begin reminder</button>
+              <span>2:00</span>
+              <button>modify reminder</button>
+            </div>
+          </div>
+        </li>
+        
+        
+      </ul>
+      <button id="clear" class="btn1">clear all</button>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

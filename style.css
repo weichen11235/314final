@@ -1,0 +1,230 @@
+:root{
+  --primary-text-color: #707070;
+  --secondary-text-color: black;
+  --input-border: 1px black solid;
+  --li-bg: white;
+  --li-border: 1px black solid;
+  --btn-border: 1px black solid;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main{
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+input, select{
+  color: var(--primary-text-color);
+  border: var(--input-border);
+}
+
+button{
+  cursor: pointer;
+  outline: none;
+}
+
+.btn1{
+  color: var(--primary-text-color);
+  border: 4px #DAD5D5 solid;
+  background-color: white;
+  transition: all 0.3s;
+}
+.btn1:hover{
+  background-color: #DAD5D5;
+  color: white;
+}
+
+/* joke panel */
+#relax{
+  padding:5px;
+  font-size: 13.3333px;
+  align-self: flex-start;
+  margin-right: 16px;
+}
+
+#joke-panel{
+  width: 530px;
+  max-height: 350px;
+  overflow-y: auto;
+  font-size: 16px;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.joke-input{
+  padding: 5px;
+}
+
+#single-joke p:first-child{
+  padding-bottom: 14px;
+}
+
+#get-joke{
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.joke-content{
+  padding-bottom: 30px;
+} 
+
+.joke-content p{
+  font-size: 20px;
+  padding-bottom: 14px;
+}
+
+#category{
+  width: 120px;
+}
+
+#joke-number{
+  width: 120px;
+}
+
+#get-jokes{
+  width: 50px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+#jokes-submit{
+  padding-bottom: 14px;
+}
+
+/* enter task informaiton */
+#enter-task{
+  padding-bottom: 50px;
+  width: 530px;
+}
+
+#enter-task input{
+  padding: 5px;
+  margin-bottom: 7px;
+}
+
+#task-name{
+  width: 100%;
+}
+
+#timing{
+  width: 49%;
+  margin-right: 6.5px;
+}
+
+#reminder{
+  width: 49%;
+}
+
+#add-task{
+  width: 100%;
+  padding: 5px;
+}
+
+/* sorter & filter */
+#sorter-filter{
+  padding-bottom: 30px;
+}
+
+#filter{
+  border: none;
+  border-bottom: var(--input-border);
+  width: 61%;
+  padding: 5px;
+  outline: none;
+  margin-right: 15px;
+}
+
+#sort{
+  padding: 5px;
+  width: 35%;
+}
+
+/* task list */
+#sortable{
+  list-style-type: none;
+}
+
+#sortable li{
+  margin-bottom: 15px;
+  background-color: var(--li-bg);
+  border: var(--li-border);
+}
+
+.content{
+  padding: 5px 15px 20px 15px;
+}
+
+.content p{
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: var(--primary-text-color);
+}
+
+.li-task{
+ margin-bottom: 20px;
+ color: var(--primary-text-color);
+}
+
+.li-task select{
+  padding: 5px;
+  width: 30%;
+}
+
+.li-task button{
+  margin-right: 10px;
+  width: 30%;
+  padding: 5px;
+  color:var(--primary-text-color);
+  border: var(--btn-border);
+  background-color: white;
+}
+
+.li-time{
+  margin-bottom: 20px;
+  color: var(--secondary-text-color);
+  font-size: 35px;
+}
+
+.li-time span{
+  margin-right: 30px;
+}
+
+.li-time button{
+  font-size: 35px;
+  border: none;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.li-time button:hover{
+  color: var(--primary-text-color);
+}
+
+.li-remind{
+  color: var(--primary-text-color);
+}
+
+.li-remind span{
+  margin-right: 10px;
+}
+
+.li-remind button{
+  margin-right: 10px;
+  background-color: white;
+  border: none;
+  color: var(--primary-text-color);
+}
+
+#clear{
+  padding: 5px;
+  width: 100%;
+}
