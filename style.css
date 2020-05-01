@@ -169,6 +169,8 @@ button{
   color: var(--primary-text-color);
 }
 
+/* task list -- task name, modifier, status */
+
 .li-task{
  margin-bottom: 20px;
  color: var(--primary-text-color);
@@ -188,6 +190,18 @@ button{
   background-color: white;
 }
 
+.modify-area{
+  margin-top: 10px;
+}
+
+.modify-area input{
+  width: 30%;
+  padding: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+/* task list -- time, start, delete */
 .li-time{
   margin-bottom: 20px;
   color: var(--secondary-text-color);
@@ -209,12 +223,16 @@ button{
   color: var(--primary-text-color);
 }
 
+/*task list -- reminder */
 .li-remind{
   color: var(--primary-text-color);
 }
 
-.li-remind span{
+.li-remind input{
+  width: 30%;
+  padding: 5px;
   margin-right: 10px;
+  outline: none;
 }
 
 .li-remind button{
@@ -222,6 +240,39 @@ button{
   background-color: white;
   border: none;
   color: var(--primary-text-color);
+}
+
+.modify-reminder{
+  margin-top: 10px;
+}
+
+.modify-reminder input{
+  width: 30%;
+  padding: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.modify-reminder button{
+  width: 30%;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  outline: none;
+  border: var(--btn-border);
+  color: var(--primary-text-color);
+}
+
+.li-remind span{
+  margin-right: 10px;
+}
+
+.time-pass{
+  text-align: center;
+  color: red;
+  padding: 20px 0;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 #clear{
