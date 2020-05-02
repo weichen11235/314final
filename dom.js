@@ -42,7 +42,7 @@ function writeToDom(taskObject) {
                   </div>
                   <div class="li-time">
                     <span>${taskObject.time}</span>
-                    <button>start</button>
+                    <button onclick="start(this)">start</button>
                     <button onclick="deleteTask(this)">delete</button>
                   </div>
                   <div class="li-remind">
@@ -65,11 +65,11 @@ function writeToDom(taskObject) {
                   </div>
                   <div class="li-time">
                     <span>${taskObject.time}</span>
-                    <button>start</button>
+                    <button onclick="start(this)">start</button>
                     <button onclick="deleteTask(this)">delete</button>
                   </div>
                   <div class="li-remind">
-                    <button>click to begin reminder</button>
+                    <button onclick="remindMe(this)">click to begin reminder</button>
                     <span>${taskObject.reminder}</span>
                     <button onclick="setReminder(this)">modify reminder</button>
                     <div class="modify-reminder"></div>

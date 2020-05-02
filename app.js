@@ -143,7 +143,8 @@ function addReminder(id) {
     }
   });
   localStorage.setItem('tasks', JSON.stringify(taskArray));
-  id.parentElement.innerHTML = `<button>click to begin reminder</button>
+  id.parentElement.innerHTML = `<button onclick="remindMe(this)">
+                                click to begin reminder</button>
                                 <span>${timeValue}</span>
                                 <button onclick="setReminder(this)">modify reminder</button>
                                 <div class="modify-reminder"></div>`;  

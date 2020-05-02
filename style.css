@@ -267,6 +267,13 @@ button{
   margin-right: 10px;
 }
 
+.scream{
+  padding-top: 30px;
+  font-size: 25px;
+  color: red;
+  text-align: center;
+}
+
 .time-pass{
   text-align: center;
   color: red;
