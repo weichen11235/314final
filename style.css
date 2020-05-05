@@ -50,7 +50,7 @@ button{
 }
 
 #joke-panel{
-  width: 530px;
+  width: 400px;
   max-height: 350px;
   overflow-y: auto;
   font-size: 16px;
@@ -103,7 +103,7 @@ button{
 /* enter task informaiton */
 #enter-task{
   padding-bottom: 50px;
-  width: 530px;
+  width: 400px;
 }
 
 #enter-task input{
@@ -117,7 +117,7 @@ button{
 
 #timing{
   width: 49%;
-  margin-right: 6.5px;
+  margin-right: 4px;
 }
 
 #reminder{
@@ -140,7 +140,7 @@ button{
   width: 61%;
   padding: 5px;
   outline: none;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 #sort{
@@ -160,20 +160,28 @@ button{
 }
 
 .content{
-  padding: 5px 15px 20px 15px;
+  padding: 0px 15px 10px 15px;
 }
 
 .content p{
   padding-bottom: 10px;
-  font-size: 20px;
-  color: var(--primary-text-color);
+  font-size: 25px;
+  color: var(--secondary-text-color);
 }
 
 /* task list -- task name, modifier, status */
 
 .li-task{
- margin-bottom: 20px;
+ margin-bottom: 10px;
+ display: none;
  color: var(--primary-text-color);
+}
+
+.more{
+  padding: 5px;
+  border: none;
+  color:var(--primary-text-color);
+  background-color: white;
 }
 
 .li-task select{
@@ -182,7 +190,7 @@ button{
 }
 
 .li-task button{
-  margin-right: 10px;
+  margin-right: 9px;
   width: 30%;
   padding: 5px;
   color:var(--primary-text-color);
@@ -197,30 +205,31 @@ button{
 .modify-area input{
   width: 30%;
   padding: 5px;
-  margin-right: 10px;
+  margin-right: 9px;
   outline: none;
 }
 
 /* task list -- time, start, delete */
 .li-time{
-  margin-bottom: 20px;
-  color: var(--secondary-text-color);
-  font-size: 35px;
+  margin-bottom: 10px;
+  color: var(--primary-text-color);
 }
 
 .li-time span{
-  margin-right: 30px;
+  margin-right: 10px;
+  font-size: 15px;
 }
 
 .li-time button{
-  font-size: 35px;
+  font-size: 15px;
   border: none;
   background-color: white;
   margin-right: 10px;
+  color: var(--primary-text-color);
 }
 
 .li-time button:hover{
-  color: var(--primary-text-color);
+  color: var(--secondary-text-color);
 }
 
 /*task list -- reminder */
@@ -236,10 +245,14 @@ button{
 }
 
 .li-remind button{
+  font-size: 15px;
   margin-right: 10px;
   background-color: white;
   border: none;
   color: var(--primary-text-color);
+}
+.li-remind button:hover{
+  color: var(--secondary-text-color);
 }
 
 .modify-reminder{
@@ -249,21 +262,26 @@ button{
 .modify-reminder input{
   width: 30%;
   padding: 5px;
-  margin-right: 10px;
+  margin-right: 9px;
   outline: none;
 }
 
 .modify-reminder button{
   width: 30%;
   padding: 5px;
-  margin-right: 10px;
+  margin-right: 9px;
   background-color: white;
   outline: none;
   border: var(--btn-border);
   color: var(--primary-text-color);
 }
 
+.modify-reminder button:hover{
+  color: var(--primary-text-color);
+}
+
 .li-remind span{
+  font-size: 15px;
   margin-right: 10px;
 }
 

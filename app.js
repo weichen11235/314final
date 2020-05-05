@@ -18,9 +18,20 @@ $("#relax").click(function(){
   }
 });
 
+//show more features toggle
+function showMore(id){
+  let options = id.nextElementSibling.firstElementChild;
+  $(options).toggle();
+  if($(id).text() === "more"){
+    $(id).text("close");
+  } else {
+    $(id).text("more");
+  }
+}
+
 //JOKE API
 $("#get-joke").click(function(){
-  $.get("http://api.icndb.com/jokes/random", function(data, status){
+  $.get("https://api.icndb.com/jokes/random", function(data, status){
     $("#sj-content").text(data.value.joke);
   });
 });
@@ -28,7 +39,7 @@ $("#get-joke").click(function(){
 $("#get-jokes").click(function(){
   let type = $("#category").val();
   let number = $("#joke-number").val();
-  $.get(`http://api.icndb.com/jokes/random/${number}?limitTo=[${type}]`, function(data, status){
+  $.get(`https://api.icndb.com/jokes/random/${number}?limitTo=[${type}]`, function(data, status){
     let content = "";
     data.value.forEach(function(item){
       content += `<p>${item.joke}</p>`;
@@ -51,7 +62,7 @@ function taskRename(id) {
 }
 
 function rename(id) {
-  let name = id.parentElement.parentElement.previousElementSibling;
+  let name = id.parentElement.parentElement.nextElementSibling;
   let name2 = id.previousElementSibling;
   let taskArray = getFromLocal();
   taskArray.forEach(function(task) {
@@ -68,14 +79,14 @@ function rename(id) {
 //modify time
 function timeModify(id) {
   let container = id.nextElementSibling.nextElementSibling;
-  container.innerHTML = `<input type="number" placeholder="enter time in minutes">
+  container.innerHTML = `<input type="number" placeholder="enter in min.">
                         <button onclick="newTime(this)">modify</button>
                         <button onclick="cancel(this)">cancel</button>`;
 }
 
 function newTime(id) {
-  let taskName = id.parentElement.parentElement.previousElementSibling.innerText;
-  let time = id.parentElement.parentElement.nextElementSibling.firstElementChild;
+  let taskName = id.parentElement.parentElement.nextElementSibling.innerText;
+  let time = id.parentElement.parentElement.nextElementSibling.nextElementSibling.firstElementChild;
   let timeValue = formatTime(id.previousElementSibling.value);
   let taskArray = getFromLocal();
   taskArray.forEach(function(task) {
@@ -99,7 +110,7 @@ function formatTime(time) {
 
 //modify status and update the change to local storage
 function statusUpdate(id) {
-  let taskName = id.parentElement.previousElementSibling.innerText;
+  let taskName = id.parentElement.nextElementSibling.innerText;
   let taskStatus = id.value;
   let taskArray = getFromLocal();
   taskArray.forEach(function(task) {
@@ -119,8 +130,8 @@ function setReminder(id) {
 }
 
 function set(id) {
-  let taskName = id.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
-  let time = id.parentElement.previousElementSibling.previousElementSibling;
+  let taskName = id.parentElement.parentElement.previousElementSibling.previousElementSibling.innerText;
+  let time = id.parentElement.previousElementSibling.previousElementSibling.previousElementSibling;
   let timeValue = id.previousElementSibling.value;
   let taskArray = getFromLocal();
   taskArray.forEach(function(task) {
@@ -134,7 +145,7 @@ function set(id) {
 }
 
 function addReminder(id) {
-  let taskName = id.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+  let taskName = id.parentElement.previousElementSibling.previousElementSibling.innerText;
   let timeValue = formatTime(id.previousElementSibling.value);
   let taskArray = getFromLocal();
   taskArray.forEach(function(task) {
@@ -143,9 +154,9 @@ function addReminder(id) {
     }
   });
   localStorage.setItem('tasks', JSON.stringify(taskArray));
-  id.parentElement.innerHTML = `<button onclick="remindMe(this)">
-                                click to begin reminder</button>
-                                <span>${timeValue}</span>
+  id.parentElement.innerHTML = `<span>${timeValue}</span>
+                                <button onclick="remindMe(this)">
+                                begin reminder</button>
                                 <button onclick="setReminder(this)">modify reminder</button>
                                 <div class="modify-reminder"></div>`;  
 }
@@ -171,7 +182,7 @@ function addTask(e) {
 
 //delete task
 function deleteTask(id) {
-  let taskName = id.parentElement.previousElementSibling.previousElementSibling.innerText;
+  let taskName = id.parentElement.previousElementSibling.innerText;
   let taskArray = getFromLocal();
   taskArray.forEach(function(task, index) {
     if(task.name === taskName) {

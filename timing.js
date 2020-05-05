@@ -34,8 +34,8 @@ function start(id) {
 }
 
 function remindMe(id) {
-  let timer = id.nextElementSibling;
-  let time = id.nextElementSibling.innerText;
+  let timer = id.previousElementSibling;
+  let time = id.previousElementSibling.innerText;
   let totalMinutes, totalSeconds;
   totalMinutes = Number(time.substr(0, 2));
   totalSeconds = totalMinutes * 60;
@@ -52,7 +52,7 @@ function remindMe(id) {
 
     if(timer.innerText === "00:00") {
       clearInterval(countDown);
-      let taskName = id.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+      let taskName = id.parentElement.previousElementSibling.previousElementSibling.innerText;
       $('body').prepend(`<p class="scream">${taskName}: ${totalMinutes} minutes pass</p>`);
       setTimeout(function(){
         document.body.firstElementChild.remove();

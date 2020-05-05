@@ -32,18 +32,19 @@ function writeToDom(taskObject) {
   if(taskObject.reminder === ":00") {
     task = `<li class="ui-state-default task-card">
                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                <button class="more" onclick="showMore(this)">more</button>
                 <div class="content">
-                  <p>${taskObject.name}</p>
                   <div class="li-task">
                     <button onclick="taskRename(this)">rename task</button>
                     <button onclick="timeModify(this)">modify time</button>
                     ${selectStatus}
                     <div class="modify-area"></div>
                   </div>
+                  <p>${taskObject.name}</p>
                   <div class="li-time">
                     <span>${taskObject.time}</span>
                     <button onclick="start(this)">start</button>
-                    <button onclick="deleteTask(this)">delete</button>
+                    <button onclick="deleteTask(this)">delete task</button>
                   </div>
                   <div class="li-remind">
                     <input type="number" placeholder="enter time in minutes">
@@ -55,22 +56,23 @@ function writeToDom(taskObject) {
   else {
     task = `<li class="ui-state-default task-card">
                 <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+                <button class="more" onclick="showMore(this)">more</button>
                 <div class="content">
-                  <p>${taskObject.name}</p>
                   <div class="li-task">
                     <button onclick="taskRename(this)">rename task</button>
                     <button onclick="timeModify(this)">modify time</button>
                     ${selectStatus}
                     <div class="modify-area"></div>
                   </div>
+                  <p>${taskObject.name}</p>
                   <div class="li-time">
                     <span>${taskObject.time}</span>
                     <button onclick="start(this)">start</button>
-                    <button onclick="deleteTask(this)">delete</button>
+                    <button onclick="deleteTask(this)">delete task</button>
                   </div>
                   <div class="li-remind">
-                    <button onclick="remindMe(this)">click to begin reminder</button>
                     <span>${taskObject.reminder}</span>
+                    <button onclick="remindMe(this)">begin reminder</button>
                     <button onclick="setReminder(this)">modify reminder</button>
                     <div class="modify-reminder"></div>
                   </div>
